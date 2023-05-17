@@ -1,0 +1,196 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+body{
+    padding: 0px 20px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.6)),url(./bg.jpg);
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.clock{
+    position: relative;
+    width: 280px;
+    height: 280px;
+    backdrop-filter: blur(1px);
+    box-shadow: inset 5px 5px 25px blue;
+    border-radius: 50%;
+    display: flex;
+    scale: 2;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    filter: drop-shadow(0px 0px 10px blue)  drop-shadow(0px 0px 0px blue) ;
+}
+@media(max-width:900px){
+    #time{
+        width: 110px;
+        height: 110px;
+    }
+    .clock{
+        width: 240px;
+        height: 240px;
+    }
+}
+
+#time{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 250px;
+    backdrop-filter: blur(1px);
+    border-radius: 50%;
+}
+#time .circle{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#time .circle svg{
+    position: relative;
+    transform: rotate(270deg);
+}
+
+#time .circle:nth-child(1) svg{
+    width: 250px;
+    height: 250px;
+}
+#time .circle:nth-child(2) svg{
+    width: 210px;
+    height: 210px;
+}
+#time .circle:nth-child(3) svg{
+    width: 170px;
+    height: 170px;
+}
+#time .circle svg circle{
+    width: 100%;
+    height: 100%;
+    fill: transparent;
+    stroke-width: 5;
+    stroke: var(--clr);
+    transform: translate(5px,5px);
+    /* opacity: .25; */
+}
+#time .circle:nth-child(1) svg circle{
+    stroke-dasharray: 760;
+    stroke-dashoffset: 760;
+}
+#time .circle:nth-child(2) svg circle{
+    stroke-dasharray: 630;
+    stroke-dashoffset: 630;
+}
+#time .circle:nth-child(3) svg circle{
+    stroke-dasharray: 510;
+    stroke-dashoffset: 510;
+}
+
+
+.dots{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    z-index: 10;
+}
+.dots::before{
+    content: '';
+    position: absolute;
+    top: -3px;
+    width: 15px;
+    height: 15px;
+    background:var(--clr);
+    border-radius: 50%;
+    box-shadow: 0 0 20px var(--clr),0 0 40px var(--clr),0 0 60px var(--clr), 0 0 80px var(--clr);
+}
+
+.niddles{
+    position: absolute;
+    width: 2px;
+    height: 50%;
+    border-radius: 50%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    z-index: 10;
+}
+#time::before{
+    content: '';
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 17px;
+    height: 17px;
+    background: blue;
+    border-radius: 50%;
+    z-index: 20;
+}
+.niddles i{
+    position: absolute;
+    width: 2px;
+    background: var(--clr2);
+    height: 60%;
+    opacity: .75;
+    border-radius: 6px;
+    transform-origin: center;
+    transform: scaleY(0.5);
+}
+
+.niddles.niddles2{
+    width: 110px;
+    height: 110px;
+    z-index: 9;
+}
+.niddles.niddles3{
+    width: 100px;
+    height: 100px;
+    z-index: 8;
+}
+.niddles.niddles2 i{
+    width: 3px;
+}
+.digital{
+    position: absolute;
+    top: 60%;
+    color: #fff;
+    font-size: 11px;
+}
+
+.niddles.niddles3 i{
+    width: 5px;
+}
+
+#time span {
+    position: absolute;
+    inset: 55px;
+    text-align: center;
+    color: #fff;
+    transform: rotate(calc(30deg * var(--i)));
+}
+#time span b{
+    font-size: .75em;
+    font-weight: 500;
+    display: inline-block;
+    transform: rotate(calc(-30deg * var(--i)));
+}
+
+
+
+
+
