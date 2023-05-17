@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    overflow: hidden;
+    text-decoration: none;
+    list-style : none;
+    color: #fff;
+}
+
+nav{
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.navbar{
+    padding: 20px 10px;
+    z-index: 10;
+}
+ul{
+    display: flex;
+    margin: 0px 10px;
+}
+ul li{
+    padding: 0px 15px;
+}
+ul li a{
+    font-size: 23px;
+    cursor: pointer;
+}
+.clock{
+    height: 100vh;
+    background: url("./img.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
